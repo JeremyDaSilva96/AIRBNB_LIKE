@@ -1,0 +1,35 @@
+.banner-relative {
+  position: relative;
+}
+
+.banner-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.banner-search-bar {
+  position: absolute;
+  top: 9%;
+  width: 65%;
+  padding: 20px;
+}
+
+
+.banner-title {
+  position: absolute;
+  top: 30%;
+  padding: 20px;
+  margin-left: 160px;
+  color: white;
+  font-size: bolder;
+}
+
+.banner-text{
+  position: absolute;
+  top: 50%;
+  padding: 20px;
+  margin-left: 160px;
+  font-size: 16px;
+  color: white;
+}
