@@ -1,27 +1,30 @@
-<div class="container mt-5">
-  <!-- Flats List -->
-  <div class="row">
-    <% @flats.each do |flat| %>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <% if flat.image_url.present? %>
-            <%= image_tag(flat.image_url, style: "height: 240px; object-fit: cover;", class: "card-img-top", alt: flat.title) %>
-          <% end %>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title d-flex"><%= flat.title %></h5>
-            <p class="card-text"> <%= flat.address %></p>
-            <p class="card-text"><%= flat.description %></p>
-            <div class="d-flex justify-content-start gap-4">
-              <p class="card-text">
-                <i class="fas fa-users"></i> <%= flat.number_of_guests %>
-              </p>
-              <p class="card-text">
-                <i class="fas fa-dollar-sign"></i> <%= flat.price_per_night %>
-              </p>
-            </div>
+  
+<div class="row mt-1">
+  <% @flats.each do |flat| %>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <% if flat.image_url.present? %>
+          <%= image_tag(flat.image_url, style: "height: 240px; object-fit: cover;", class: "card-img-top", alt: flat.title) %>
+        <% end %>
+        <div class="card-body d-flex flex-column mt-2">
+          <h5 class="card-title mb-4"><%= flat.title %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <div class="d-flex gap-2">
+            <p class="card-text"><%= flat.city %>, </p>
+            <p class="card-text"><%= flat.country %></p>
+          </div>
+          <p class="card-text"><%= flat.description %></p>
+          <div class="d-flex justify-content-start gap-4">
+            <p class="card-text">
+              <i class="fas fa-users"></i> <%= flat.number_of_guests %>
+            </p>
+            <p class="card-text">
+              <i class="fas fa-dollar-sign"></i> <%= flat.price_per_night %>
+            </p>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 </div>
