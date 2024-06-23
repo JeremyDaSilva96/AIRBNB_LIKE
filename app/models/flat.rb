@@ -1,6 +1,6 @@
 class Flat < ApplicationRecord
   has_many :bookings
-  has_one_attached :photo
+  has_many_attached :photos
   # has_many :reviews, dependent: :destroy
   # has_many :users, through: :bookings
 

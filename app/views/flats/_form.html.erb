@@ -9,7 +9,7 @@
           <%= f.input :country, as: :select, collection: country_select_options %>
           <%= f.input :zip_code %>
           <%= f.input :description %>
-          <%= f.input :photo, as: :file %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :price_per_night %>
           <%= f.input :number_of_guests %>
           <div class="d-flex justify-content-end">
