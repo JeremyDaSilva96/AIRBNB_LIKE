@@ -1,6 +1,6 @@
 <!--banner-->
 <div class="banner mb-4">
-  <%= image_tag "banner.png", alt: "banner of the website",  class: "banner-img img-fluid" %>
+  <%= image_tag "banner.png", alt: "banner of the website", class: "banner-img img-fluid" %>
 </div>
 <!--banner-->
 <!--body-->
@@ -9,8 +9,14 @@
     <% @flats.each do |flat| %>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <% if flat.image_url.present? %>
+          <% if flat.photo.attached? %>
+            <!--cloudinary-->
+            <%= image_tag url_for(flat.photo), class: "banner-img img-fluid" %>
+            <!--cloudinary-->
+          <% else %>
+            <!--unslpash-->
             <%= image_tag(flat.image_url, class: "images", alt: flat.title) %>
+            <!--unslpash-->
           <% end %>
           <div class="card-body d-flex flex-column mt-2">
             <h5 class="card-title mb-4"><%= flat.title %></h5>
