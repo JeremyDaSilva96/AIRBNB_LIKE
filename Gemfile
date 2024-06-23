@@ -31,6 +31,13 @@ gem "jbuilder"
 gem 'unsplash'
 
 gem 'faker'
+
+gem 'country_select'
+
+gem 'iso_country_codes'
+
+gem 'countries'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

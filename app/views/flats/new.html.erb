@@ -1,0 +1,10 @@
+<!-- app/views/flats/new.html.erb -->
+<!--banner-->
+<div class="banner banner-relative mb-5">
+  <%= image_tag "banner.png", alt: "banner of the website", class: "banner-img img-fluid" %>
+  <h1 class="banner-title card-title my-4">Rent your flat</h1>
+</div>
+<!--banner-->
+<!--form-->
+<%= render "form", flat: @flat %>
+<!--form-->
