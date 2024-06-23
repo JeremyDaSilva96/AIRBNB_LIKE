@@ -3,14 +3,15 @@
     <%= link_to "#", class: "navbar-brand mx-2" do %>
       <i class="fa-brands fa-airbnb logo"></i>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <li class="nav-item active mx-2">
+            <%= link_to "Rent now !", new_flat_path, class: "btn btn-primary button" %>
+          </li>
           <li class="nav-item active mx-2">
             <%= link_to "Home", flats_path, class: "nav-link" %>
           </li>
@@ -18,9 +19,9 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown mx-2">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag("user-logo.png", alt: "User logo", class: "avatar user-logo") %>
-          </a>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag("user-logo.png", alt: "User logo", class: "avatar user-logo") %>
+            </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%#= link_to "Another action", "#", class: "dropdown-item" %>
