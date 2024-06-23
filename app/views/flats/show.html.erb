@@ -36,7 +36,7 @@
         <div class="card h-100">
           <% if @flat.photo.attached? %>
             <!--cloudinary-->
-            <%= cl_image_tag @flat.photo.key, class: "banner-img img-fluid", crop: :thumb, gravity: :face %>
+            <%= cl_image_tag @flat.photo.key, class: "images", crop: :thumb, gravity: :face %>
             <!--cloudinary-->
           <% else %>
             <!--unsplash-->

@@ -23,7 +23,7 @@
         <div class="card h-100">
           <% if flat.photo.attached? %>
             <!--cloudinary-->
-            <%= cl_image_tag flat.photo.key, class: "banner-img img-fluid" %>
+            <%= cl_image_tag flat.photo.key, class: "images" %>
             <!--cloudinary-->
           <% else %>
             <!--unsplash-->
