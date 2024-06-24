@@ -36,8 +36,11 @@
         </div>
       </div>
     <% end %>
+    <!--buttons-->
     <div class="d-flex justify-content-end gap-4 my-4">
       <%= link_to "Back", flats_path, class: "btn btn-primary button" %>
+      <%= link_to "Delete", flat_path(@flat), class: "btn btn-danger button text-white", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to "Modify", edit_flat_path(@flat), class: "btn btn-primary button" %>
       <%= link_to "Book it!", flats_path, class: "btn btn-primary button" %>
     </div>
   </div>
