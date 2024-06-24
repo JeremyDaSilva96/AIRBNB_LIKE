@@ -1,0 +1,32 @@
+<!--banner-->
+<div class="banner banner-relative mb-5">
+  <%= image_tag "banner.png", alt: "banner of the website", class: "banner-img img-fluid" %>
+  <h1 class="banner-title card-title my-4">My Bookings</h1>
+</div>
+<!--banner-->
+<!--reservation-card-->
+<% if @bookings.any? %>
+  <% @bookings.each do |booking| %>
+    <% if booking.flat.photos.attached? %>
+      <!--         Cloudinary-->
+      <%= cl_image_tag booking.flat.photos.first.key, class: "images" %>
+    <% else booking.flat.image_url.present? %>
+      <!--         Unsplash-->
+      <%= image_tag bookingflat.image_url, class: "images", alt: flat.title %>
+    <% end %>
+    <p><%= link_to booking.flat.title, flat_path(booking.flat) %></p>
+    <p><%= booking.flat.city %></p>
+    <p><%= booking.flat.country %></p>
+    <p><%= booking.start_date %></p>
+    <p><%= booking.end_date %></p>
+    <p>
+      <%= link_to 'View', flat_booking_path(booking.flat, booking), class: 'btn btn-primary' %>
+    </p>
+  <% end %>
+  <% else %>
+<div class="d-flex justify-content-between m-4">
+    <p>You have no bookings.</p>
+  <% end %>
+    <%= link_to "Back", flats_path, class: "btn btn-primary button" %>
+</div>
+<!--reservation-card-->

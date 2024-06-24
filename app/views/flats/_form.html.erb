@@ -12,7 +12,8 @@
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :price_per_night %>
           <%= f.input :number_of_guests %>
-          <div class="d-flex justify-content-end">
+          <div class="d-flex justify-content-between">
+            <%= link_to "Back", flats_path, class: "btn btn-primary button" %>
             <%= f.submit "Submit", class: "btn btn-primary button" %>
           </div>
         <% end %>
