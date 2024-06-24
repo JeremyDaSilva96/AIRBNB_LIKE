@@ -26,7 +26,7 @@ photos = Unsplash::Photo.search("apartment", 1, 6)
 
   image_url = photos[i].urls.raw
   image_file = URI.open(image_url)
-  flat.photo.attach(io: image_file, filename: "photo_#{i}.jpg", content_type: 'image/jpeg')
+  flat.photos.attach(io: image_file, filename: "photo_#{i}.jpg", content_type: 'image/jpeg')
 
   flat.save!
 end

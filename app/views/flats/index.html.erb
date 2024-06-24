@@ -21,14 +21,12 @@
     <% @flats.each do |flat| %>
       <div class="col-md-4 mb-4">
         <div class="card h-100">
-          <% if flat.photo.attached? %>
-            <!--cloudinary-->
-            <%= cl_image_tag flat.photo.key, class: "images" %>
-            <!--cloudinary-->
-          <% else %>
-            <!--unsplash-->
-            <%= image_tag(flat.image_url, class: "images", alt: flat.title) %>
-            <!--unsplash-->
+          <% if flat.photos.attached? %>
+            <!-- Cloudinary -->
+            <%= cl_image_tag flat.photos.first.key, class: "images" %>
+          <% else flat.image_url.present? %>
+            <!-- Unsplash  -->
+            <%= image_tag flat.image_url, class: "images", alt: flat.title %>
           <% end %>
           <div class="card-body d-flex flex-column g">
             <h2 class="card-title my-4 h4"><%= flat.title %></h2>

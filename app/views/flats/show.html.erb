@@ -1,13 +1,11 @@
 <!--banner-->
 <div class="banner banner-relative mb-5">
-  <% if @flat.photo.attached? %>
+  <% if @flat.photos.attached? %>
     <!--cloudinary-->
-    <%= cl_image_tag @flat.photo.key, alt: "#{@flat.title} - image of the apartment", class: "banner-img img-fluid", crop: :thumb, gravity: :face %>
+    <%= cl_image_tag @flat.photos.first.key, alt: "#{@flat.title} - image of the apartment", class: "banner-img img-fluid", crop: :thumb, gravity: :face %>
     <!--cloudinary-->
   <% else %>
-    <!--unsplash-->
-    <%#= image_tag(@flat.image_url, alt: "#{@flat.title} - image of the apartment", class: "banner-img img-fluid") %>
-    <!--unsplash-->
+    <%= image_tag "banner.png", alt: "banner of the website", class: "banner-img img-fluid" %>
   <% end %>
   <h1 class="banner-title card-title my-4"><%= @flat.title %></h1>
   <div class="banner-text card-body d-flex flex-column">
@@ -31,18 +29,10 @@
 <!--body-->
 <div class="container">
   <div class="row">
-    <% 6.times do %>
+    <% @flat.photos.each do |photo| %>
       <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <% if @flat.photo.attached? %>
-            <!--cloudinary-->
-            <%= cl_image_tag @flat.photo.key, class: "images", crop: :thumb, gravity: :face %>
-            <!--cloudinary-->
-          <% else %>
-            <!--unsplash-->
-            <%= image_tag(@flat.image_url, class: "images", alt: @flat.title) %>
-            <!--unsplash-->
-          <% end %>
+        <div class="h-100">
+          <%= cl_image_tag photo.key, class: "images" %>
         </div>
       </div>
     <% end %>
