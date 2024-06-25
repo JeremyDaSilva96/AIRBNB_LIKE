@@ -4,29 +4,45 @@
   <h1 class="banner-title card-title my-4">My Bookings</h1>
 </div>
 <!--banner-->
-<!--reservation-card-->
-<% if @bookings.any? %>
-  <% @bookings.each do |booking| %>
-    <% if booking.flat.photos.attached? %>
-      <!--         Cloudinary-->
-      <%= cl_image_tag booking.flat.photos.first.key, class: "images" %>
-    <% else booking.flat.image_url.present? %>
-      <!--         Unsplash-->
-      <%= image_tag bookingflat.image_url, class: "images", alt: flat.title %>
-    <% end %>
-    <p><%= link_to booking.flat.title, flat_path(booking.flat) %></p>
-    <p><%= booking.flat.city %></p>
-    <p><%= booking.flat.country %></p>
-    <p><%= booking.start_date %></p>
-    <p><%= booking.end_date %></p>
-    <p>
-      <%= link_to 'View', flat_booking_path(booking.flat, booking), class: 'btn btn-primary' %>
-    </p>
-  <% end %>
-  <% else %>
-<div class="d-flex justify-content-between m-4">
-    <p>You have no bookings.</p>
-  <% end %>
-    <%= link_to "Back", flats_path, class: "btn btn-primary button" %>
+<!--body-->
+<div class="container">
+  <div class="row mt-1", style="height: 300px;">
+    <% if @bookings.any? %>
+      <% @bookings.each do |booking| %>
+        <div class="col-md-4">
+          <!--reservation-card-->
+          <div class="card">
+            <% if booking.flat.photos.attached? %>
+              <!--         Cloudinary-->
+              <%= cl_image_tag booking.flat.photos.first.key, class: "images" %>
+            <% else booking.flat.image_url.present? %>
+              <!--         Unsplash-->
+              <%= image_tag bookingflat.image_url, class: "images", alt: flat.title %>
+            <% end %>
+            <div class="gap-1 p-3">
+              <H2><%= booking.flat.title %></H2>
+              <p><%= booking.flat.city %></p>
+              <p><%= booking.flat.country %></p>
+              <div class="d-flex gap-4">
+                <p>From: <%= booking.starts_at %></p>
+                <p>to: <%= booking.ends_at %></p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mx-4">
+              <p>
+                <%= link_to 'View', flat_booking_path(booking.flat, booking), class: 'btn btn-primary button' %>
+              </p>
+            </div>
+          <% end %>
+        <% else %>
+          <p>You have no bookings.</p>
+        <% end %>
+      </div>
+      <!--reservation-card-->
+    </div>
+  <div class="d-flex justify-content-end mb-2">
+    <%= link_to "Back", flats_path, class: "btn btn-primary button m-4" %>
+  </div>
+  </div>
 </div>
-<!--reservation-card-->
+<!--body-->
