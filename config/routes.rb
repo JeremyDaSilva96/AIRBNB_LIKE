@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :flats do
-    # resources :bookings, only: [:create, :new, :show]
+    resources :bookings, only: [:create, :new, :show]
   end
 
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :destroy]
 
   # get "/about", to: "pages#about"
 end
