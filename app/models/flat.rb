@@ -10,5 +10,5 @@ class Flat < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  validates :title, :city, :country, :zip_code, :price_per_night, :number_of_guests, :address, :description, presence: true
+  validates :title, :price_per_night, :number_of_guests, :address, :description, presence: true
 end

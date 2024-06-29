@@ -16,8 +16,6 @@ class FlatsController < ApplicationController
       sql_subquery = <<-SQL
         title ILIKE :query OR
         address ILIKE :query OR
-        city ILIKE :query OR
-        country ILIKE :query OR
         CAST(price_per_night AS TEXT) ILIKE :query OR
         CAST(number_of_guests AS TEXT) ILIKE :query
       SQL
@@ -58,7 +56,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:title, :address, :city, :zip_code, :country, :description, :price_per_night, :number_of_guests, photos: [])
+    params.require(:flat).permit(:title, :address, :description, :price_per_night, :number_of_guests, photos: [])
   end
 
   def set_flat
