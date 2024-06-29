@@ -16,9 +16,6 @@ photos = Unsplash::Photo.search("apartment", 1, 6)
   flat = Flat.new(
     title: Faker::Lorem.sentence(word_count: 3),
     address: Faker::Address.street_address,
-    city: Faker::Address.city,
-    zip_code: Faker::Address.zip_code,
-    country: Faker::Address.country,
     description: Faker::Lorem.paragraph,
     price_per_night: rand(50..200),
     number_of_guests: rand(1..5)
