@@ -1,22 +1,26 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid mx-2">
-    <%= link_to "#", class: "navbar-brand mx-2" do %>
-      <i class="fa-brands fa-airbnb logo"></i>
-    <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="navbar-left">
+    <%#= link_to "#", class: "" do %>
+      <%= image_tag('at_home_logo.png', class: "navbar-logo") %>
+      <%# end %>
+      <!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>-->
+      <%= link_to "Home", root_path, class: "navbar-link" %>
+      <%= link_to 'Contact', "#", class:"navbar-link"  %>
+      <%= link_to 'Service', "#", class:"navbar-link" %>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto navbar-right">
         <% if user_signed_in? %>
           <li class="nav-item active mx-2">
-            <%= link_to "Rent now !", new_flat_path, class: "btn btn-primary button" %>
+            <%= link_to "Rent now !", new_flat_path, class: "navbar-button w-button" %>
           </li>
-          <li class="nav-item active mx-2">
-            <%= link_to "Home", flats_path, class: "nav-link" %>
+          <!--          <li class="nav-item active mx-2">-->
+          <%#= link_to "Home", flats_path, class: "navbar-button w-button" %>
+          <!--          </li>-->
           <li class="nav-item mx-1">
-            <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
-          </li>
+            <%= link_to "My Bookings", bookings_path, class: "navbar-button w-button" %>
           </li>
           <li class="nav-item dropdown mx-2">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,13 +34,12 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "navbar-button w-button" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "navbar-button w-button" %>
           </li>
         <% end %>
       </ul>
     </div>
   </div>
-</div>

@@ -9,12 +9,12 @@
                   input_html: { autocomplete: "email" } %>
     </div>
     <div class="form-actions">
-      <%= f.button :submit, "Send", class: "btn btn-primary button" do %>
+      <%= f.button :submit, "Send", class: "form-button" do %>
         <i class="fas fa-envelope"></i> Send me reset password instructions
       <% end %>
     </div>
   <% end %>
-  <div class="d-flex justify-content-end">
+  <div class="d-flex justify-content-end gap-3">
     <%= render "devise/shared/links" %>
     </div>
 </div>
