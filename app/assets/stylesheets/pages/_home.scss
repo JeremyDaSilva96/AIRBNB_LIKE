@@ -1,1 +1,72 @@
-// Specific CSS for your home-page
+.homepage-container {
+  background-image: linear-gradient(225deg, #bbb2a8, #fff);
+  height: 100vh;
+  display: flex;
+}
+
+.homepage-col-left {
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  text-align: left;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  padding-bottom: 70px;
+  padding-left: 150px;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  display: flex;
+
+  .homepage-col-left:hover {
+    transform: translate(0, .2px);
+  }
+
+  .homepage-title {
+    color: #463939;
+    font-family: Times New Roman, TimesNewRoman, Times, Baskerville, Georgia, serif;
+    font-size: 56px;
+  }
+
+  .homepage-text {
+    color: rgba(70, 57, 57, .64);
+    font-family: Times New Roman, TimesNewRoman, Times, Baskerville, Georgia, serif;
+    font-size: 16px;
+  }
+
+  .homepage-button {
+    color: #fff;
+    text-align: left;
+    background-color: #463939;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 40px;
+    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    transition: box-shadow .2s, transform .2s;
+    display: flex;
+
+  }
+  .homepage-button:hover {
+    background-color: #463939;
+    transform: translate(0, -1px);
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, .37);
+  }
+}
+
+.homepage-col-right {
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  padding-left: 0;
+  display: flex;
+
+  .homepage-img {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 16px;
+    width: 680px;
+  }
+}
