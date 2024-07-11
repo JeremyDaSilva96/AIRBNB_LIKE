@@ -39,7 +39,12 @@
                           input_html: { class: "form-control", autocomplete: "new-password" } %>
           </div>
           <div class="d-flex justify-content-between mt-4">
-            <%= render "devise/shared/links" %>
+            <%#= render partial: "devise/shared/links", locals: { resource_name: resource_name } %>
+            <%- if controller_name != 'sessions' %>
+              <%= link_to new_session_path(resource_name), class: "form-link", role: "button", aria_label: "Log in to your account" do %>
+                <i class="fas fa-sign-in-alt"></i> Log in
+              <% end %><br />
+            <% end %>
             <%= f.button :submit, "Sign up", class: "brown-button" %>
           </div>
         <% end %>
