@@ -1,5 +1,5 @@
 <!--banner-->
-<div class="banner banner-relative mb-5">
+<div class="banner banner-relative">
   <% if @flat.photos.attached? %>
     <!--cloudinary-->
     <%= cl_image_tag @flat.photos.first.key, alt: "#{@flat.title} - image of the apartment", class: "banner-img img-fluid", crop: :thumb, gravity: :face %>
@@ -25,7 +25,7 @@
 </div>
 <!--banner-->
 <!--body-->
-<div class="container">
+<div class="body-container">
   <div class="row">
     <% @flat.photos.each do |photo| %>
       <div class="col-md-4 mb-4">

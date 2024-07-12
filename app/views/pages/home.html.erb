@@ -34,3 +34,14 @@
   </div>
 </div>
 <!--log in modal-->
+<!--forgot password modal-->
+<div class="modal fade bd-example-modal-lg" id="forpass-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render partial: "devise/shared/forgot_password", locals: { resource: @resource, resource_name: @resource_name, devise_mapping: @devise_mapping } %>
+      </div>
+    </div>
+  </div>
+</div>
+<!--forgot password modal-->
