@@ -1,5 +1,5 @@
 <!--banner-->
-<div class="banner banner-relative mb-5">
+<div class="banner banner-relative">
   <% if @booking.flat.photos.attached? %>
     <!--cloudinary-->
     <%= cl_image_tag @booking.flat.photos.first.key, alt: "#{@booking.flat.title} - image of the apartment", class: "banner-img img-fluid", crop: :thumb, gravity: :face %>
@@ -7,24 +7,22 @@
   <% else %>
     <%= image_tag "banner.png", alt: "banner of the website", class: "banner-img img-fluid" %>
   <% end %>
-
+  <h1 class="banner-title card-title my-4">Booking Details</h1>
 </div>
 <!--banner-->
-
-<div class="container">
+<div class="body-container">
   <div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-      <div class="card-body mb-4">
-        <h2 class="text-center mb-4">Booking Details</h2>
-            <h2 class="card-title "><%= @booking.flat.title %></h2>
-            <p class="card-text "><strong>Address:</strong> <%= @booking.flat.address %></p>
-            <p class="card-text "><strong>Start Date:</strong> <%= @booking.starts_at %></p>
-            <p class="card-text "><strong>End Date:</strong> <%= @booking.ends_at %></p>
-            <p class="card-text "><strong>Messages:</strong> <%= @booking.messages %></p>
-          <div class="d-flex justify-content-between ">
-            <%= link_to "Back", bookings_path, class: "btn btn-primary button" %>
-            <%= link_to "Cancel", booking_path(@booking), class: "btn btn-danger button text-white", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </div>
+    <div class="mb-4 w-25">
+      <h2 class="card-title "><%= @booking.flat.title %></h2>
+      <p class="card-text "><strong>Address:</strong><br> <%= @booking.flat.address %></p>
+      <div class="d-flex">
+        <p class="card-text "><strong>Start Date:</strong> <%= @booking.starts_at %></p>
+        <p class="card-text "><strong>End Date:</strong> <%= @booking.ends_at %></p>
       </div>
+      <p class="card-text "><strong>Messages:</strong><br> <%= @booking.messages %></p>
+    </div>
+    <div class="d-flex justify-content-between ">
+      <%= link_to "Back", bookings_path, class: "brown-button" %>
+      <%= link_to "Cancel", booking_path(@booking), class: "brown-button", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </div>
   </div>
