@@ -1,11 +1,11 @@
 <!--banner-->
-<div class="banner banner-relative mb-5">
+<div class="banner banner-relative">
   <%= image_tag "banner.png", alt: "banner of the website", class: "banner-img img-fluid" %>
   <h1 class="banner-title card-title my-4">My Bookings</h1>
 </div>
 <!--banner-->
 <!--body-->
-<div class="container">
+<div class="body-container">
   <div class="row mt-1", style="height: 300px;">
     <% if @bookings.any? %>
       <% @bookings.each do |booking| %>
@@ -39,9 +39,9 @@
       </div>
       <!--reservation-card-->
     </div>
-  <div class="d-flex justify-content-end mb-2">
-    <%= link_to "Back", flats_path, class: "brown-button m-4" %>
-  </div>
+    <div class="d-flex justify-content-end mb-2">
+      <%= link_to "Back", flats_path, class: "brown-button m-4" %>
+    </div>
   </div>
 </div>
 <!--body-->
