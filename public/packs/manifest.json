@@ -1,0 +1,24 @@
+{
+  "application.js": "/packs/js/application-c18b89bdf505348bf758.js",
+  "application.js.map": "/packs/js/application-c18b89bdf505348bf758.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-c18b89bdf505348bf758.js"
+      ],
+      "js.map": [
+        "/packs/js/application-c18b89bdf505348bf758.js.map"
+      ]
+    },
+    "webflow": {
+      "js": [
+        "/packs/js/webflow-b89d58a784f725145019.js"
+      ],
+      "js.map": [
+        "/packs/js/webflow-b89d58a784f725145019.js.map"
+      ]
+    }
+  },
+  "webflow.js": "/packs/js/webflow-b89d58a784f725145019.js",
+  "webflow.js.map": "/packs/js/webflow-b89d58a784f725145019.js.map"
+}
