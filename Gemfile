@@ -39,6 +39,8 @@ gem 'iso_country_codes'
 gem 'countries'
 
 gem "geocoder"
+
+gem 'webpacker'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
