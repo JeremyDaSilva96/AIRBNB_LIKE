@@ -18,7 +18,8 @@ photos = Unsplash::Photo.search("apartment", 1, 6)
     address: Faker::Address.street_address,
     description: Faker::Lorem.paragraph,
     price_per_night: rand(50..200),
-    number_of_guests: rand(1..5)
+    number_of_guests: rand(1..5),
+    user: User.first
   )
 
   image_url = photos[i].urls.raw

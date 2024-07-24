@@ -1,4 +1,3 @@
-<!-- app/views/flats/new.html.erb -->
 <!--banner-->
 <div class="banner banner-relative">
   <%= image_tag "banner.png", alt: "banner of the website", class: "banner-img img-fluid" %>
@@ -12,19 +11,21 @@
       <div class="card-body">
         <%= simple_form_for @flat do |f| %>
           <%= f.input :title %>
-         <%= f.input :address, input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"}, wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+          <%= f.input :address, input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"}, wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
           <%= f.input :description %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :price_per_night %>
           <%= f.input :number_of_guests %>
           <div class="d-flex justify-content-between mt-2">
-            <%= link_to "Back", flats_path, class: "brown-button" %>
+            <%= link_to "Back", flat_path(@flat), class: "brown-button" %>
             <div class="d-flex justify-content-end gap-4">
-              <%= link_to "Delete", flat_path(@flat), class: "brown-button", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               <%= f.submit "Submit", class: "brown-button" %>
-            </div>
+            <% end %>
+            <% if policy(@flat).destroy? %>
+              <%= link_to "Delete", flat_path(@flat), class: "brown-button", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
