@@ -40,7 +40,9 @@
         <%= link_to "Back", flats_path, class: "brown-button" %>
       </div>
       <div class="d-flex justify-content-end gap-4">
-        <%= link_to "Modify", edit_flat_path(@flat), class: "brown-button" %>
+        <% if policy(@flat).edit? %>
+          <%= link_to "Modify", edit_flat_path(@flat), class: "brown-button" %>
+        <% end %>
         <%= link_to "Book it!", new_flat_booking_path(@flat), class: "brown-button" %>
       </div>
     </div>
